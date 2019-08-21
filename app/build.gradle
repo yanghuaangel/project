@@ -1,0 +1,64 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-android'
+apply plugin: "com.github.spotbugs"
+
+android {
+    compileSdkVersion 28
+    defaultConfig {
+        applicationId "com.example.myapplication"
+        minSdkVersion 19
+        targetSdkVersion 28
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+sourceSets {
+    // we define `main` sourceSet here, so SpotBugs Gradle Plugin generates `spotbugsMain` task
+    main {
+        java.srcDirs = ['src/main/java']
+    }
+}
+
+tasks.withType(com.github.spotbugs.SpotBugsTask) {
+    // configure automatically generated tasks
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation 'com.android.support:appcompat-v7:28.0.0'
+    implementation 'com.android.support.constraint:constraint-layout:1.1.3'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'com.android.support.test:runner:1.0.2'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+
+    //自己加的库
+    implementation 'com.github.anrwatchdog:anrwatchdog:1.4.0'
+    implementation 'com.android.support:recyclerview-v7:28.0.0'
+    implementation 'com.orhanobut:logger:1.15'
+    implementation 'org.greenrobot:eventbus:3.1.1'
+    implementation 'com.google.code.gson:gson:2.3.1'
+    spotbugsPlugins 'com.h3xstream.findsecbugs:findsecbugs-plugin:1.7.1'
+
+    implementation 'com.android.support:design:28.0.0'
+
+    implementation 'com.github.bumptech.glide:glide:4.9.0'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.9.0'
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+
+    implementation 'com.lmy.codec:hardwarevideocodec:1.7.3'
+    implementation 'com.lmy.codec:rtmp:1.7.3'//If you want to use RTMP stream.
+
+
+}
+repositories {
+    mavenCentral()
+}

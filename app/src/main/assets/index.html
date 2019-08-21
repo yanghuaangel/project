@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Native与Html5交互</title>
+    <script type="text/javascript">
+        function sayHello() {
+            var name =document.getElementById("txName").value;
+           <!--app是java中定义的InterfaceName-->
+            window.app.sayHello(name);
+        }
+        function showName(name) {
+document.getElementById("txName").value=name;
+}
+
+
+    </script>
+</head>
+<body>
+<input id="txName">
+<button onclick="sayHello()">send</button>
+</body>
+
+</html>

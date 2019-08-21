@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.example.myapplication">
+
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:name=".MyApplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        tools:ignore="GoogleAppIndexingWarning">
+        <activity android:name=".KotlinTestActivity"></activity>
+        <activity
+            android:name=".H5Activity"
+            android:label="@string/title_activity_h5"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".FlowLayoutActivity" />
+        <activity android:name=".NoRectActivity" />
+        <activity android:name=".MyViewActivity" />
+        <activity android:name=".AZchooseActivity" />
+        <activity android:name=".TestActivity" />
+        <activity android:name=".PermissionActivity" />
+        <activity android:name=".Hwvideo" />
+        <activity android:name=".LeakActivity" />
+        <activity
+            android:name=".RemoteControlActivity"
+            android:theme="@style/AppTheme2" />
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>
