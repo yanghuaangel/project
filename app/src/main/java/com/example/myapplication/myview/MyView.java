@@ -5,9 +5,8 @@ import android.graphics.Canvas;
 import android.support.annotation.Nullable;
 import android.util.AttributeSet;
 import android.util.Log;
-import android.view.View;
 
-public class MyView extends View {
+public class MyView extends android.support.v7.widget.AppCompatTextView {
     public MyView(Context context) {
         super(context);
     }
